@@ -1,0 +1,23 @@
+From: Moritz Schlarb <schlarbm@uni-mainz.de>
+Date: Fri, 30 Dec 2022 10:26:53 +0100
+Subject: Backport LWS_PROTOCOL_LIST_TERM from 4.3.0
+
+Can be removed once libwebsockets 4.3.0 is in debian proper.
+---
+ daemon/notif-mgr.h | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/daemon/notif-mgr.h b/daemon/notif-mgr.h
+index 32d620f..e4eef1c 100644
+--- a/daemon/notif-mgr.h
++++ b/daemon/notif-mgr.h
+@@ -2,6 +2,9 @@
+ 
+ #ifndef NOTIF_MGR_H
+ #define NOTIF_MGR_H
++
++#define LWS_PROTOCOL_LIST_TERM { NULL, NULL, 0, 0, 0, NULL, 0 }
++
+ typedef struct _SeafNotifManager SeafNotifManager;
+ typedef struct _SeafNotifManagerPriv SeafNotifManagerPriv;
+ 
